@@ -29,8 +29,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
   
 
 async def poll_class(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    question = "Are you attending class tonight?/Partecipi alla lezione stasera?"
-    options = ["Yes", "No"]
+    question = "RSVP for class tonight/RSVP per la lezione di stasera"
+    options = ["Yes/Si", "Late arrival/arrivo in ritardo"]
     if await is_admin(update, context):
         message = await context.bot.send_poll(
             chat_id=update.effective_chat.id,
