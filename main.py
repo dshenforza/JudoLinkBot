@@ -25,7 +25,11 @@ async def is_admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
             return True
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="Let's do some Judo. Type '/pollclass' to see who is training today")
+    if await is_admin(update, context):
+        await context.bot.send_message(chat_id=update.effective_chat.id, text="Let's do some Judo.  Facciamo un po' di Judo. Type '/pollclass' to see who is training today.")
+    else:
+        await context.bot.send_message(chat_id=update.effective_chat.id, text="Admnistrators only")
+
   
 
 async def poll_class(update: Update, context: ContextTypes.DEFAULT_TYPE):
