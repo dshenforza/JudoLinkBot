@@ -1,0 +1,7 @@
+.env
+attendance/
+api_key.py
+JudoLinkBot.py
+telegram_bot_tutorial.py
+.venv/
+
